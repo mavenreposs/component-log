@@ -23,7 +23,7 @@ public class TestLog {
         user.age = 22;
         //输出对象
         RCLog.object(user);
-        
+
 
         System.out.println("Done.");
     }
