@@ -96,9 +96,9 @@ public final class RCLog {
     /**
      * 拼接日志，每条日志之间会有分割线分割
      *
-     * @param message
-     * @param args
-     * @return
+     * @param message 消息内容
+     * @param args 消息参数
+     * @return 打印对象
      */
     public static LogPrinter append(String message, Object... args) {
         printer.append(message, args);
