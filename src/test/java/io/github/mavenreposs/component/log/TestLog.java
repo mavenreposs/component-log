@@ -1,6 +1,8 @@
 package io.github.mavenreposs.component.log;
 
 import org.junit.jupiter.api.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 public class TestLog {
 
@@ -23,6 +25,24 @@ public class TestLog {
         user.age = 22;
         //输出对象
         RCLog.object(user);
+
+
+//        Logger logger = LoggerFactory.getLogger(this.getClass());
+//        logger.info("test");
+
+        System.out.println("Done.");
+    }
+
+    @Test
+    public void test2() {
+        RCLog.i("第一行日志 \n 换行输出日志");
+
+        try {
+            Object obj = null;
+            obj.toString();
+        } catch (Exception e) {
+            RCLog.e(e, "空指针异常");
+        }
     }
 
 
