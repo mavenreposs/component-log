@@ -8,10 +8,10 @@ public class TestLog {
 
     @Test
     public void testLog() {
-        RCLog.init("AAA");
+//        RCLog.init("AAA");
 //        RCLog.init("AAA", 2);
 //        RCLog.init("AAA", 3, LogLevel.INFO);
-//        RCLog.init("AAA", 4, LogLevel.INFO, true);
+        RCLog.init("AAA", 4, LogLevel.INFO, true);
 
         //输出Json字符串
         RCLog.json("{\"id\":221,\"name\":\"my name is ueueo\",\"desc\":\"this is description!\"}");
@@ -35,13 +35,13 @@ public class TestLog {
 
     @Test
     public void test2() {
-        RCLog.i("第一行日志 \n 换行输出日志");
+        RCLog.info("第一行日志\n换行输出日志");
 
         try {
             Object obj = null;
             obj.toString();
         } catch (Exception e) {
-            RCLog.e(e, "空指针异常");
+            RCLog.error(e, "空指针异常");
         }
     }
 
