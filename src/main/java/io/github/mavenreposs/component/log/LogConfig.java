@@ -1,5 +1,9 @@
 package io.github.mavenreposs.component.log;
 
+import io.github.mavenreposs.component.log.contracts.LoggerInterface;
+import io.github.mavenreposs.component.log.logger.ConsoleLogger;
+import io.github.mavenreposs.component.log.logger.FileLogger;
+
 import java.util.ArrayList;
 import java.util.List;
 
@@ -22,7 +26,7 @@ public final class LogConfig {
     //是否输出到文件
     private boolean printToFile = false;
 
-    private List<LogInterface> logger = new ArrayList<>();
+    private List<LoggerInterface> logger = new ArrayList<>();
 
     /**
      * 日志级别，只有大于等于logLevel的日志才会打印
@@ -32,8 +36,8 @@ public final class LogConfig {
     private int logLevel = LogLevel.VERBOSE;
 
     public LogConfig() {
-        logger.add(new ConsoleLogTool());
-        logger.add(new FileLogTool());
+        logger.add(new ConsoleLogger());
+        logger.add(new FileLogger());
     }
 
     public LogConfig tag(String tag) {
@@ -59,9 +63,9 @@ public final class LogConfig {
         return this;
     }
 
-    public LogConfig addLogger(LogInterface logInterface) {
-        if (logInterface != null && !logger.contains(logInterface)) {
-            logger.add(logInterface);
+    public LogConfig addLogger(LoggerInterface loggerInterface) {
+        if (loggerInterface != null && !logger.contains(loggerInterface)) {
+            logger.add(loggerInterface);
         }
         return this;
     }
@@ -91,7 +95,7 @@ public final class LogConfig {
         return printToFile;
     }
 
-    List<LogInterface> getLoggers() {
+    List<LoggerInterface> getLoggers() {
         return logger;
     }
 }
