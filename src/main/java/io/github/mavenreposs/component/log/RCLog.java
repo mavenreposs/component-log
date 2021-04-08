@@ -57,7 +57,7 @@ public final class RCLog {
     /**
      * 添加新的日志输入工具
      *
-     * @param loggerInterface
+     * @param loggerInterface logger
      */
     public static void addLogger(LoggerInterface loggerInterface) {
         printer.getLogConfig().addLogger(loggerInterface);
@@ -66,8 +66,8 @@ public final class RCLog {
     /**
      * 指定当前这条Log信息打印的tag，不受全局配置影响
      *
-     * @param tag
-     * @return
+     * @param tag tag
+     * @return LogPrinter
      */
     public static LogPrinter tag(String tag) {
         return printer.tag(tag);
@@ -76,8 +76,8 @@ public final class RCLog {
     /**
      * 指定当前这条Log信息打印的方法调用栈数量，不受全局配置影响
      *
-     * @param methodCount
-     * @return
+     * @param methodCount 调用栈数量
+     * @return LogPrinter
      */
     public static LogPrinter method(int methodCount) {
         return printer.method(methodCount);
@@ -86,8 +86,8 @@ public final class RCLog {
     /**
      * 指定当前这条Log信息是否打印到文件，不受全局配置影响
      *
-     * @param file
-     * @return
+     * @param file 是否打印到文件
+     * @return LogPrinter
      */
     public static LogPrinter file(boolean file) {
         return printer.file(file);

@@ -20,6 +20,7 @@ public class LogUtil {
     /**
      * Handy function to get a loggable stack trace from a Throwable
      * @param tr An exception to log
+     * @return String
      */
     public static String getStackTraceString(Throwable tr) {
         if (tr == null) {
